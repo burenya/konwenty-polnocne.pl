@@ -1,0 +1,39 @@
+{
+  "konwenty": [
+    {
+      "nazwa": "Aishiteru",
+      "miasto": "Wrocław",
+      "data": "20.10.2022",
+      "link": "twojastara.pl",
+      "typ": "anime"
+    },
+    {
+      "nazwa": "Pyrkon",
+      "miasto": "Poznań",
+      "data": "20.10.2022",
+      "link": "twojastara.pl",
+      "typ": "fantastyka"
+    },
+    {
+      "nazwa": "Kurwy ",
+      "miasto": "orlean",
+      "data": "20.10.2022",
+      "link": "twojastara.pl",
+      "typ": "anime"
+    },
+    {
+      "nazwa": "Aishiteru",
+      "miasto": "Wrocław",
+      "data": "20.10.2022",
+      "link": "twojastara.pl",
+      "typ": "anime"
+    },
+    {
+      "nazwa": "Aishiteru",
+      "miasto": "Wrocław",
+      "data": "20.10.2022",
+      "link": "twojastara.pl",
+      "typ": "anime"
+    }
+  ]
+}
