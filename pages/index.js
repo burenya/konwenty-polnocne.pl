@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Head from "../components/header";
+import Head from "next/head";
+import Header from "../components/header";
 import Foot from "../components/footer";
 const data = require("../data/example.json");
 
@@ -19,9 +19,13 @@ data.konwenty.forEach((x) => {
 export default function Home() {
   return (
     <>
-      <Head></Head>
+      <Head>
+        <title>KonwentyPółnocne</title>
+        <link rel="shortcut icon" href="/icon.svg" />
+      </Head>
+      <Header />
       <section>{konwenty}</section>
-      <Foot></Foot>
+      <Foot />
     </>
   );
 }

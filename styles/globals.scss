@@ -13,14 +13,19 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 4;
   margin-top: 1rem;
   background-color: white;
   width: 100%;
-
+  .zabenka {
+    width: 15%;
+    margin-bottom: 1rem;
+  }
   h1 {
-    font-size: 4rem;
-    text-align: center;
+    font-size: 2rem;
   }
 }
 section {
