@@ -14,9 +14,12 @@ jobs:
         with:
           ref: frontend
           path: frontend
-      - name: Build frontend
+      - name: Setup Node.JS
         uses: actions/setup-node@v1
-      - run: |
+        with:
+          node_version: 16
+      - name: Build frontend
+        run: |
           cd frontend 
           npm install
           npm run build
@@ -27,4 +30,4 @@ jobs:
         with:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            BRANCH: pages
-           FOLDER: src/out
+           FOLDER: frontend/src/out
