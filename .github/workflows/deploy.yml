@@ -32,12 +32,12 @@ jobs:
           npm install
           node index.js
           cp lista.json ../data
-          touch ../out/.nojekyll
           cd ../
       - name: Build frontend
         run: | 
           npm install
           npm run build
+          touch ./out/.nojekyll
         env:
           CI: true
         
