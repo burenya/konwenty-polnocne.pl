@@ -1,0 +1,50 @@
+name: Deploy
+on:
+  push:
+    branches: ["main", "frontend", "discord"]
+  workflow_dispatch:
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frontend
+        uses: actions/checkout@v3
+        with:
+          ref: frontend
+      - name: Checkout discord
+        uses: actions/checkout@v3
+        with:
+          ref: discord
+          path: discord
+      - name: Setup Node.JS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Build discord
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          MESSAGE_ID: ${{ secrets.MESSAGE_ID }}
+        run: |
+          cd discord
+          npm install
+          node index.js
+          cp lista.json ../data
+          cd ../
+      - name: Build frontend
+        run: | 
+          npm install
+          npm run build
+          touch ./out/.nojekyll
+        env:
+          CI: true
+        
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+           ssh-key: ${{ secrets.PAGES_TOKEN }}
+           branch: pages
+           folder: out
+           clean: true
