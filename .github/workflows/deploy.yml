@@ -16,9 +16,10 @@ jobs:
           path: frontend
       - name: Build frontend
         uses: actions/setup-node@v1
-      - run: cd frontend
-      - run: npm install
-      - run: npm run build
+      - run: |
+          cd frontend 
+          npm install
+          npm run build
         env:
           CI: true
       - name: Deploy to GitHub Pages
