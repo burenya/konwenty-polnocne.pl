@@ -1,1 +1,0 @@
-# konwenty-polnocne.pl
