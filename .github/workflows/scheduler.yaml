@@ -1,7 +1,0 @@
-name: Konwet fetch scheduler
-
-on:
-  push:
-    branch: frontend
-
-jobs:
