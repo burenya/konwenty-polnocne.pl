@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: [ "main", "frontend"]
+    branches: ["main", "frontend", "discord"]
   workflow_dispatch:
 jobs:
   # This workflow contains a single job called "build"
