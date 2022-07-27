@@ -23,6 +23,27 @@ jobs:
           npm run build
         env:
           CI: true
+      - name: Checkout discord
+        uses: actions/checkout@v3
+        with:
+          ref: discord
+          path: discord
+      - name: Setup Node.JS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Build discord
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          MESSAGE_ID: ${{ secrets.MESSAGE_ID }}
+        run: |
+          cd discord
+          npm install
+          node index.js
+          cp lista.json ../out
+          cd ../
+        
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
