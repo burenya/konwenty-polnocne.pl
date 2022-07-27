@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/header";
 import Foot from "../components/footer";
-const data = require("../data/example.json");
+const data = require("../data/lista.json");
 
 let konwenty = [];
 data.konwenty.forEach((x) => {
