@@ -26,9 +26,9 @@ jobs:
         env:
           CI: true
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-           GITHUB_TOKEN: ${{ secrets.PAGES_TOKEN }}
-           BRANCH: pages
-           FOLDER: frontend/src/out
-           CLEAN: true
+           ssh-key: ${{ secrets.PAGES_TOKEN }}
+           branch: pages
+           folder: frontend/src/out
+           clean: true
