@@ -43,6 +43,9 @@ div.konwent {
   flex-direction: column;
   align-items: center;
   width: 30rem;
+  @media (max-width:480px){
+    width: 80%;
+  }
   border-radius: 16px;
   height: auto;
   div {
