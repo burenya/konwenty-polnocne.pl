@@ -1,10 +1,13 @@
 name: Deploy
 on:
   push:
-    branches: ["main", "frontend", "discord"]
+    branches:
+      - main
+      - frontend
+      - discord
   workflow_dispatch:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   # This workflow contains a single job called "build"
   build:
