@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>KonwentyPółnocne</title>
+        <title>Konwenty Północne</title>
         <link rel="shortcut icon" href="/icon.svg" />
       </Head>
       <Header />
