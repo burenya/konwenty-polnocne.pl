@@ -3,6 +3,8 @@ on:
   push:
     branches: ["main", "frontend", "discord"]
   workflow_dispatch:
+  schedule:
+    - cron: '*/1 * * * *'
 jobs:
   # This workflow contains a single job called "build"
   build:
