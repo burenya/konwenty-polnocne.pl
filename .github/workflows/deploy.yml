@@ -1,13 +1,13 @@
 name: Deploy
-on:
-  schedule:
-    - cron: '*/5 * * * *'
   push:
     branches:
       - main
       - frontend
       - discord
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook
 jobs:
   # This workflow contains a single job called "build"
   build:
