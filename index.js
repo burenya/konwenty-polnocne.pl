@@ -3,6 +3,7 @@ const discord = require('discord.js');
 const dotenv = require('dotenv');
 const fs = require('fs');
 dotenv.config();
+// Test
 const bot = new Client({
     intents: [GatewayIntentBits.Guilds],
     presence: {status: 'invisible'}
