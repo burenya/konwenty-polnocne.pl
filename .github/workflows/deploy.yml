@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-      - frontend
-      - discord
   workflow_dispatch:
   repository_dispatch:
     types:
