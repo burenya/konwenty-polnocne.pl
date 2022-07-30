@@ -1,9 +1,15 @@
 export default function Foot() {
   return (
     <footer>
-      <p>POWERED BY</p>
-      <div className="bubble"><p>żabenka</p></div>
-      <div className="bubble"><p>confamilia</p></div>
+      <p>Powered By</p>
+      <div className="Links">
+        <div className="bubble">
+          <p>Żabenka</p>
+        </div>
+        <div className="bubble">
+          <p>Confamilia</p>
+        </div>
+      </div>
     </footer>
   );
 }

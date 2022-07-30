@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Satoshi";
   src: url(../font/Satoshi-Variable.ttf);
-  font-weight: bold;
+  font-weight: 900;
 }
 
 * {
@@ -14,23 +14,21 @@ body {
   scrollbar-width: none; /* Firefox */
   font-size: 26px;
 }
-header{
+header {
   position: fixed;
+  margin: 0.1rem 0 0 8rem;
 }
 .bubble {
   padding: 0.25rem 1rem 0 1rem;
-  margin: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   border-radius: 61px;
   border: solid black 3px;
-  .icon{
+  .icon {
+    padding: 0 0.75rem 0 0;
     height: 1rem;
     width: auto;
-  }
-  p{
-    padding: 0.25rem;
   }
 }
 section {
@@ -41,38 +39,35 @@ section {
   align-items: center;
 }
 div.konwent {
-  background-color: #ffffff;
-  filter: drop-shadow(0.25rem 0.25rem 10px #717171);
-  margin: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30rem;
-  @media (max-width:480px){
-    width: 80%;
-  }
-  border-radius: 16px;
-  height: auto;
-  div {
+  width: 30%;
+  .bottom {
     width: 90%;
-    padding: 1rem;
+    font-size: 23px;
     display: flex;
-    justify-content: space-between;
-  }
-  .miasto,
-  .data {
-    font-size: 1.25rem;
-  }
-  .nazwa {
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  .typ {
-    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .name_bottom {
+      justify-self: flex-start;
+    }
+    .data_bottom {
+      justify-self: flex-end;
+    }
+    hr {
+      height: 3px;
+      flex: 1;
+      background-color: black;
+    }
   }
 }
 footer {
+  margin: 2rem 0 15rem 8rem;
   display: flex;
+  flex-direction: column;
+  .Links {
+    display: flex;
+    div {
+      margin: 0.5rem 1rem 0 0;
+    }
+  }
 }
