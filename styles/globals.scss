@@ -1,31 +1,36 @@
 @font-face {
-  font-family: "Intro";
-  src: url(../font/IntroDemoCond-BlackCAPS.otf);
+  font-family: "Satoshi";
+  src: url(../font/Satoshi-Variable.ttf);
+  font-weight: bold;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Intro;
+  font-family: Satoshi;
 }
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  font-size: 26px;
 }
-header {
+header{
+  position: fixed;
+}
+.bubble {
+  padding: 0.25rem 1rem 0 1rem;
+  margin: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  z-index: 4;
-  margin-top: 1rem;
-  background-color: white;
-  width: 100%;
-  .zabenka {
-    width: 15%;
-    margin-bottom: 1rem;
+  border-radius: 61px;
+  border: solid black 3px;
+  .icon{
+    height: 1rem;
+    width: auto;
   }
-  h1 {
-    font-size: 2rem;
+  p{
+    padding: 0.25rem;
   }
 }
 section {
@@ -69,11 +74,5 @@ div.konwent {
   }
 }
 footer {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  bottom: 0;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
   display: flex;
 }
