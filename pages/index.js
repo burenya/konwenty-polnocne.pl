@@ -7,14 +7,17 @@ let konwenty = [];
 data.konwenty.forEach((x) => {
   konwenty.push(
     <div className="konwent">
-      <h1>{x.nazwa}</h1>
       <div className="bottom">
-        <p className="name_bottom">{x.nazwa}</p>
+        <p className="name_bottom">{x.nazwa.toLocaleLowerCase()}</p>
         <hr />
         <p className="data_bottom">{x.data}</p>
       </div>
-      <div className=""></div>
-      <Blob></Blob>
+
+      <div className="info">
+        <div>{x.miasto}</div>
+        <div>{x.typ}</div>
+      </div>
+      <Blob className="blob"></Blob>
     </div>
   );
 });
