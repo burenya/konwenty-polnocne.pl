@@ -116,6 +116,12 @@
     },
     {
       "typ": "weebowe",
+      "nazwa": "Japan Fest",
+      "data": "08.10.2022",
+      "miasto": "Szczecin"
+    },
+    {
+      "typ": "weebowe",
       "nazwa": "Animecon Halloween",
       "data": "15-16.10.2022",
       "miasto": "Poznań"
