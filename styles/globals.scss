@@ -15,24 +15,58 @@
   padding: 0;
   font-family: Satoshi;
 }
+
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   font-size: 26px;
 }
 header {
+  top: 0%;
   position: fixed;
   z-index: 1000;
   margin: 1rem 0 0 10%;
   display: flex;
+}
+nav {
+  width: 80%;
+  margin: 5rem 0 2.5rem 10%;
+  div {
+    margin: 0.5rem 0 0.5rem;
+  }
   .bubble {
-    margin-right: 0.25rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    transition-duration: 400ms;
+  }
+  .bubble:hover {
+    border-radius: 15px;
+    transition-duration: 400ms;
+  }
+  .checkbox {
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    input + .bubble {
+      transition-duration: 400ms;
+    }
+    input:checked + .bubble {
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+    }
   }
 }
 .bubble {
   background-color: white;
   padding: 0.25rem 1rem 0 1rem;
   display: flex;
+  margin-right: 0.25rem;
   flex-direction: row;
   align-items: center;
   border-radius: 61px;
