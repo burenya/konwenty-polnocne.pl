@@ -1,0 +1,44 @@
+{
+  "colors": [
+    {
+      "bg_color": "#3ACCC3",
+      "ac_color": "#F2F552"
+    },
+    {
+      "bg_color": "#C55FD6",
+      "ac_color": "#FB9639"
+    },
+    {
+      "bg_color": "#71E367",
+      "ac_color": "#A242ED"
+    },
+    {
+      "bg_color": "#4977EB",
+      "ac_color": "#EF31FF"
+    },
+    {
+      "bg_color": "#8652F4",
+      "ac_color": "#F75858"
+    },
+    {
+      "bg_color": "#DC5273",
+      "ac_color": "#EDD928"
+    },
+    {
+      "bg_color": "#DF4B4B",
+      "ac_color": "#76DF64"
+    },
+    {
+      "bg_color": "#DA45F3",
+      "ac_color": "#F2E147"
+    },
+    {
+      "bg_color": "#35CE85",
+      "ac_color": "#485BFF"
+    },
+    {
+      "bg_color": "#3EE29E",
+      "ac_color": "#D828B1"
+    }
+  ]
+}
