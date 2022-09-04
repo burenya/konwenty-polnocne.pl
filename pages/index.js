@@ -39,7 +39,12 @@ data.konwenty.forEach((x) => {
         "background-color": colors.colors[rng_color].bg_color,
       }}
     >
+      <div className="hoverable"></div>
       <h1>{x.nazwa.toLocaleUpperCase()}</h1>
+      <Blob
+        className="blob"
+        style={{ color: colors.colors[rng_color].ac_color }}
+      ></Blob>
       <div className="menu">
         <a
           className="plan"
@@ -89,10 +94,6 @@ data.konwenty.forEach((x) => {
           </div>
         </div>
       </div>
-      <Blob
-        className="blob"
-        style={{ color: colors.colors[rng_color].ac_color }}
-      ></Blob>
     </div>
   );
 });

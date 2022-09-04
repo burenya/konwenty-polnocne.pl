@@ -105,6 +105,11 @@ div.konwent {
     font-family: ClashDisplay;
     transition-duration: 250ms;
   }
+  .hoverable {
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+  }
   .menu {
     margin: 5rem;
     opacity: 0;
@@ -136,12 +141,14 @@ div.konwent {
     }
   }
   .div_footer {
+    width: 100%;
     bottom: 0;
     position: absolute;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 1100;
     .bottom {
       width: 95%;
       font-size: 23px;
@@ -182,23 +189,22 @@ div.konwent {
   }
   .blob {
     position: absolute;
-    align-self: flex-start;
     z-index: -1;
     height: 120%;
     left: -5rem;
     bottom: -8rem;
     transition-duration: 250ms;
   }
-}
-.konwent:hover {
-  .blob {
-    opacity: 0;
-  }
-  h1 {
-    opacity: 0;
-  }
-  .menu {
-    opacity: 1;
+  .hoverable:hover {
+    ~ h1 {
+      opacity: 0;
+    }
+    ~ .blob {
+      opacity: 0;
+    }
+    ~ .menu {
+      opacity: 1;
+    }
   }
 }
 
