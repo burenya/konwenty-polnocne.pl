@@ -98,12 +98,9 @@ div.konwent {
   flex-direction: column;
   align-items: center;
   position: relative;
-  h1 {
+  .img {
     position: absolute;
-    text-align: center;
-    font-size: 15vh;
-    font-family: ClashDisplay;
-    transition-duration: 250ms;
+    width: 100%;
   }
   .hoverable {
     z-index: 1100;

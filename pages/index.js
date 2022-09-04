@@ -40,7 +40,6 @@ data.konwenty.forEach((x) => {
       }}
     >
       <div className="hoverable"></div>
-      <h1>{x.nazwa.toLocaleUpperCase()}</h1>
       <Blob
         className="blob"
         style={{ color: colors.colors[rng_color].ac_color }}
