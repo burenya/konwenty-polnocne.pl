@@ -2,45 +2,45 @@
   "konwenty": [
     {
       "nazwa": "test",
+      "miasto": "Warszawa",
+      "data": "20.10.2022",
+      "link": "TEST",
+      "typ": "Weebowy"
+    },
+    {
+      "nazwa": "Testtesttererererererererest",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
-      "typ": "TEST"
+      "typ": "Madzianowy"
     },
     {
       "nazwa": "Testtesttest",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
-      "typ": "TEST"
+      "typ": "Weebowy"
     },
     {
       "nazwa": "Testtesttest",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
-      "typ": "TEST"
-    },
-    {
-      "nazwa": "Testtesttest",
-      "miasto": "TEST",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "Weebowy"
     },
     {
       "nazwa": "Testtesttest",
       "miasto": "Poznań",
       "data": "20.10.2022",
       "link": "TEST",
-      "typ": "TEST"
+      "typ": "Weebowy"
     },
     {
       "nazwa": "Testtesttest",
       "miasto": "Poznań",
       "data": "20.10.2022",
       "link": "TEST",
-      "typ": "TEST"
+      "typ": "Gej(ming)"
     },
     {
       "nazwa": "Testtesttest",

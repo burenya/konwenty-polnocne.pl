@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Satoshi";
   src: url(../font/Satoshi-Variable.ttf);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @font-face {
@@ -66,7 +66,7 @@ nav {
   background-color: white;
   padding: 0.25rem 1rem 0 1rem;
   display: flex;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
   flex-direction: row;
   align-items: center;
   border-radius: 61px;
@@ -82,6 +82,7 @@ nav {
   }
 }
 section {
+  z-index: -1000;
   width: 80%;
   margin-left: 10%;
   display: grid;
@@ -89,15 +90,50 @@ section {
   gap: 1.5rem;
 }
 div.konwent {
-  z-index: -2;
+  z-index: 900;
   width: 100%;
   height: 26rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   h1 {
+    position: absolute;
     text-align: center;
     font-size: 15vh;
     font-family: ClashDisplay;
+    transition-duration: 250ms;
+  }
+  .menu {
+    margin: 5rem;
+    opacity: 0;
+    position: absolute;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.25rem;
+      border-radius: 50px;
+    }
+    .link {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .calendar {
+      grid-column: 1/3;
+      grid-row: 2;
+    }
+    .plan {
+    }
+    .bottom {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
   .div_footer {
     bottom: 0;
@@ -112,12 +148,17 @@ div.konwent {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      hr {
-        margin: 0.5rem;
-        border: 0;
-        height: 3px;
+      div {
         flex: 1;
-        background-color: black;
+        display: flex;
+        align-items: center;
+        hr {
+          border: 0;
+          height: 3px;
+          min-width: 5rem;
+          flex: 1;
+          background-color: black;
+        }
       }
     }
     .info {
@@ -127,23 +168,40 @@ div.konwent {
       div {
         display: flex;
         justify-content: center;
+        align-items: center;
         border: 3px solid black;
         border-radius: 11px;
         margin: 0.5rem;
         flex: 1;
+      }
+      .icon {
+        margin: 0 0.5rem 0 0;
+        height: 1.5rem;
       }
     }
   }
   .blob {
     position: absolute;
     align-self: flex-start;
-    color: #f2f552;
     z-index: -1;
     height: 120%;
     left: -5rem;
-    bottom: -4rem;
+    bottom: -8rem;
+    transition-duration: 250ms;
   }
 }
+.konwent:hover {
+  .blob {
+    opacity: 0;
+  }
+  h1 {
+    opacity: 0;
+  }
+  .menu {
+    opacity: 1;
+  }
+}
+
 footer {
   margin: 2rem 0 15rem 10%;
   display: flex;
@@ -153,5 +211,12 @@ footer {
     div {
       margin: 0.5rem 1rem 0 0;
     }
+  }
+  .bubble {
+    cursor: pointer;
+    user-select: none;
+  }
+  .bubble:hover {
+    border-radius: 15px;
   }
 }

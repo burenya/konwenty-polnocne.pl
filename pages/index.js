@@ -1,6 +1,6 @@
 import Header from "../components/header";
 import Foot from "../components/footer";
-import { Blob } from "../icons/icons";
+import { Blob, Glob, Stars } from "../icons/icons";
 const colors = require("../data/config.json");
 const data = require("../data/lista.json");
 
@@ -40,16 +40,53 @@ data.konwenty.forEach((x) => {
       }}
     >
       <h1>{x.nazwa.toLocaleUpperCase()}</h1>
+      <div className="menu">
+        <a
+          className="plan"
+          style={{ "background-color": colors.colors[rng_color].ac_color }}
+        >
+          <p>
+            Plan <br />
+            konwentu
+          </p>
+        </a>
+        <a
+          className="link"
+          style={{ "background-color": colors.colors[rng_color].ac_color }}
+        >
+          <p>
+            Strona
+            <br /> organizatora
+          </p>
+        </a>
+        <a
+          className="calendar"
+          style={{ "background-color": colors.colors[rng_color].ac_color }}
+        >
+          <p>Dodaj do kalendarza</p>
+        </a>
+      </div>
       <div className="div_footer">
         <div className="bottom">
-          <p className="name_bottom">{x.nazwa.toLocaleLowerCase()}</p>
-          <hr />
-          <p className="data_bottom">{x.data}</p>
+          <div>
+            <p className="name_bottom">{x.nazwa.toLocaleLowerCase()}</p>
+            <hr />
+          </div>
+          <div>
+            <hr />
+            <p className="data_bottom">{x.data}</p>
+          </div>
         </div>
 
         <div className="info">
-          <div>{x.miasto}</div>
-          <div>{x.typ}</div>
+          <div>
+            <Glob className="icon" />
+            <p>{x.miasto}</p>
+          </div>
+          <div>
+            <Stars className="icon" />
+            <p>{x.typ}</p>
+          </div>
         </div>
       </div>
       <Blob
