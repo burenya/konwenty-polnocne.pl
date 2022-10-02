@@ -1,137 +1,148 @@
 {
   "konwenty": [
     {
-      "nazwa": "test",
-      "miasto": "Warszawa",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Weebowy"
+      "typ": "weebowe",
+      "nazwa": "Aishiteru xD",
+      "data": "12-13.02.2022",
+      "miasto": "Wrocław"
     },
     {
-      "nazwa": "Testtesttererererererererest",
-      "miasto": "TEST",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Madzianowy"
+      "typ": "weebowe",
+      "nazwa": "Remcon",
+      "data": "25-27.02.2022",
+      "miasto": "Trójmiasto"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "TEST",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Weebowy"
+      "typ": "madzianowe",
+      "nazwa": "Wiosenny Weekend z Mahjongiem",
+      "data": "9-10.04.2022",
+      "miasto": "Wrocław"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "TEST",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Weebowy"
+      "typ": "fantastowe",
+      "nazwa": "Pyrkon",
+      "data": "17-19.06.2022",
+      "miasto": "Poznań"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Weebowy"
+      "typ": "weebowe",
+      "nazwa": "Minicon-chan",
+      "data": "16.07.2022",
+      "miasto": "Trójmiasto"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "Gej(ming)"
+      "typ": "weebowe",
+      "nazwa": "Animatsuri",
+      "data": "22-24.07.2022",
+      "miasto": "Warszawa"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "kij wie, czym to jest xD",
+      "nazwa": "Ryucon",
+      "data": "30-31.07.2022",
+      "miasto": "Kraków"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "weebowe",
+      "nazwa": "Hikari",
+      "data": "19-21.08.2022",
+      "miasto": "Poznań"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "kij wie, czym to jest xD",
+      "nazwa": "Owocon is dead",
+      "data": "XDDDDD.08.2022",
+      "miasto": "XDDDDD"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Wrocławskie Dni Fantastyki",
+      "data": "26-28.08.2022",
+      "miasto": "Wrocław"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Funcon",
+      "data": "26-28.08.2022",
+      "miasto": "Jaworze"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "weebowe",
+      "nazwa": "KISEKIcon",
+      "data": "29.08.2022",
+      "miasto": "Wrocław"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Mroźna Brama",
+      "data": "03-04.09.2022",
+      "miasto": "Suwałki"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Warszawskie Targi Książki",
+      "data": "10-11.09.2022",
+      "miasto": "Warszawa"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Gdańsk",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Copernicon",
+      "data": "16-18.09.2022",
+      "miasto": "Toruń"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Gdynia",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "fantastowe",
+      "nazwa": "Opolcon",
+      "data": "16-18.09.2022",
+      "miasto": "Opole"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Sopot",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "weebowe",
+      "nazwa": "Moricon",
+      "data": "23-25.09.2022",
+      "miasto": "Białystok"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "weebowe",
+      "nazwa": "Namicon 2022",
+      "data": "23-25.09.2022",
+      "miasto": "Wrocław"
     },
     {
-      "nazwa": "Testtesttest",
-      "miasto": "Poznań",
-      "data": "20.10.2022",
-      "link": "TEST",
-      "typ": "TEST"
+      "typ": "gej(ming)",
+      "nazwa": "Poznań Game Arena",
+      "data": "07-09.10.2022",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Japan Fest",
+      "data": "08.10.2022",
+      "miasto": "Szczecin"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Animecon Halloween",
+      "data": "15-16.10.2022",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "fantastowe",
+      "nazwa": "Pasja Minicon",
+      "data": "4-5.11.2022",
+      "miasto": "Trójmiasto"
+    },
+    {
+      "typ": "fantastowe",
+      "nazwa": "Imladris w randze Polconu",
+      "data": "11-13.11.2022",
+      "miasto": "Kraków"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Tsuru",
+      "data": "19-20.11.2022",
+      "miasto": "Rybnik"
     }
   ]
 }
