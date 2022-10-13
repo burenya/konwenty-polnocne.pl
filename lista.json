@@ -13,12 +13,6 @@
       "miasto": "Trójmiasto"
     },
     {
-      "typ": "madzianowe",
-      "nazwa": "Wiosenny Weekend z Mahjongiem",
-      "data": "9-10.04.2022",
-      "miasto": "Wrocław"
-    },
-    {
       "typ": "fantastowe",
       "nazwa": "Pyrkon",
       "data": "17-19.06.2022",
@@ -121,12 +115,6 @@
       "miasto": "Szczecin"
     },
     {
-      "typ": "weebowe",
-      "nazwa": "Animecon Halloween",
-      "data": "15-16.10.2022",
-      "miasto": "Poznań"
-    },
-    {
       "typ": "fantastowe",
       "nazwa": "Pasja Minicon",
       "data": "4-5.11.2022",
@@ -140,9 +128,21 @@
     },
     {
       "typ": "weebowe",
+      "nazwa": "Animecon Halloween but Halloween is silent",
+      "data": "11-13.11.2022",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "weebowe",
       "nazwa": "Tsuru",
       "data": "19-20.11.2022",
       "miasto": "Rybnik"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Magnificon",
+      "data": "3-4.12.2022",
+      "miasto": "Kraków"
     }
   ]
 }
