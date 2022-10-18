@@ -50,12 +50,6 @@
     },
     {
       "typ": "fantastowe",
-      "nazwa": "Wrocławskie Dni Fantastyki",
-      "data": "26-28.08.2022",
-      "miasto": "Wrocław"
-    },
-    {
-      "typ": "fantastowe",
       "nazwa": "Funcon",
       "data": "26-28.08.2022",
       "miasto": "Jaworze"
@@ -134,7 +128,7 @@
     },
     {
       "typ": "weebowe",
-      "nazwa": "Magnificon",
+      "nazwa": "Magnificon 2.0 You can (not) śmieszkowanie",
       "data": "3-4.12.2022",
       "miasto": "Kraków"
     }
