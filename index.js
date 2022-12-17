@@ -1,62 +1,133 @@
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { GatewayIntentBits, Client } = require('discord.js');
-const discord = require('discord.js');
 const dotenv = require('dotenv');
 const fs = require('fs');
+const doc = new GoogleSpreadsheet('1IXNhplTNpHatopR1btypjFycmZt5-cUMiEF0ezspPKI');
 dotenv.config();
-// Test
 const bot = new Client({
     intents: [GatewayIntentBits.Guilds],
     presence: {status: 'invisible'}
 });
 
-const months = {
-    "🔺 STYCZEŃ 🔺": "01",
-    "🔺 LUTY 🔺": "02",
-    "🔺 MARZEC 🔺": "03",
-    "🔺 KWIECIEŃ 🔺": "04",
-    "🔺 MAJ 🔺": "05",
-    "🔺 CZERWIEC 🔺": "06",
-    "🔺 LIPIEC 🔺": "07",
-    "🔺 SIERPIEŃ 🔺": "08",
-    "🔺 WRZESIEŃ 🔺": "09",
-    "🔺 PAŹDZIERNIK 🔺": "10",
-    "🔺 LISTOPAD 🔺": "11",
-    "🔺 GRUDZIEŃ 🔺": "12",
+const ifPastEvent = (a) => {
+    const aDate = new Date(a);
+    aDate.setHours(0,0,0,0);
+    const now = new Date();
+    now.setHours(0,0,0,0);
+    return now - aDate > 0
 }
 
-bot.once('ready', async () => {
-    const channel = await bot.channels.fetch(process.env.CHANNEL_ID);
-    const message = await channel.messages.fetch(process.env.MESSAGE_ID);
-    const input = message.content.replace(/[*_]+/g, "").split('\n\n');
-    for (const elem in input) {
-        input[elem] = input[elem].split('\n');
+const getMonthList = async () => {
+    const list = {};
+    const sheet = doc.sheetsByTitle["miesiace"];
+    const rows = await sheet.getRows();
+    for (const row of rows) {
+        list[row.nazwa_miesiaca] = row.liczba
     }
-    const year = input[0].shift().replace("KONWENTY I EVENTY", "").trim();
-    const result = [];
-    const conType = {};
-    for (const conRow of input.shift()) {
-        const conSplit = conRow.split(/ +/);
-        const conEmoji = conSplit.shift();
-        conType[conEmoji] = conSplit.join(" ");
+    return list;
+}
+
+const getEmojiList = async () => {
+    const list = {};
+    const sheet = doc.sheetsByTitle["kategorie"];
+    const rows = await sheet.getRows();
+    for (const row of rows) {
+        list[row.nazwa_kategorii] = row.emoji
     }
-    for (const monthList of input) {
-        let month = months[monthList.shift()];
-        if (!month) continue;
-        for (const con of monthList) {
-            let conSplit = con.split(/ +/);
-            const conEmoji = conSplit.shift();
-            conSplit = conSplit.join(" ").split("🔸");
-            if (conType.hasOwnProperty(conEmoji)) {
-                result.push({
-                    "typ": conType[conEmoji],
-                    "nazwa": conSplit[1].trim(),
-                    "data": `${conSplit[0].replace(/ +/g, "")}.${month}.${year}`,
-                    "miasto": conSplit[2].trim()
-                })
-            }
+    return list;
+}
+
+const site_events = [];
+const discord_events = [];
+
+bot.on('ready', async () => {
+    await doc.useServiceAccountAuth({
+        client_email: process.env.GOOGLE_ACCOUNT,
+        private_key: process.env.GOOGLE_PRIVKEY
+    });
+    await doc.loadInfo();
+    const monthList = await getMonthList();
+    const emojiList = await getEmojiList();
+    const activeYear = process.env.ACTIVE_YEAR;
+    for (const sheetTitle in doc.sheetsByTitle) {
+        if (!sheetTitle.startsWith("lista_konwentow")) continue;
+        const sheet = doc.sheetsByTitle[sheetTitle];
+        const rows = await sheet.getRows();
+        const year = sheetTitle.substring(sheetTitle.length - 4);
+        rows.sort((a,b) => {
+            const aDate = new Date(`${year}-${monthList[a.miesiac]}-${a.dzien_start}`);
+            const bDate = new Date(`${year}-${monthList[b.miesiac]}-${b.dzien_start}`);
+            return aDate-bDate;
+        })
+        for (const row of rows) {
+            start_date = `${row.dzien_start}`.length == 1 ? `0${row.dzien_start}` : `${row.dzien_start}` ;
+            end_date = `${row.dzien_koniec}`.length == 1 ? `0${row.dzien_koniec}` : `${row.dzien_koniec}` ;
+            const day = start_date != end_date ? `${start_date}-${end_date}` : `${start_date}`
+            const month = monthList[row.miesiac];
+            console.log()
+            site_events.push({
+                "typ": row.kategoria,
+                "nazwa": row.nazwa_konwentu,
+                "minal": ifPastEvent(`${year}-${month}-${end_date}`),
+                "data": `${day}.${month}.${year}`,
+                "miasto": row.miasto
+            });
+            if (year != activeYear) continue;
+            discord_events.push({
+                "typ": emojiList[row.kategoria],
+                "nazwa": row.nazwa_konwentu,
+                "minal": ifPastEvent(`${year}-${month}-${end_date}`),
+                "dzien": `${day}`,
+                "miesiac": row.miesiac,
+                "miasto": row.miasto,
+                "kanal": row.id_kanalu
+            })
         }
     }
-    fs.writeFileSync("lista.json", JSON.stringify({"konwenty": result}, null, 2));
+    site_events.sort((a,b) => {
+        return parseInt(a.data.substring(a.data.length - 4)) - parseInt(b.data.substring(b.data.length - 4))
+    });
+    fs.writeFileSync("lista.json", JSON.stringify({"konwenty": site_events}, null, 2));
+    const channel = await bot.channels.fetch(process.env.CHANNEL_ID);
+    const legenda = await channel.messages.fetch(process.env.LEGENDA_ID);
+    const minione = await channel.messages.fetch(process.env.MINIONE_ID);
+    const nadchodzace = await channel.messages.fetch(process.env.NADCHODZACE_ID);
+    let legendaText = `**KONWENTY I EVENTY W ${activeYear} **\n`;
+    legendaText += "🔸  **LEGENDA** 🔸\n";
+    for (const emojiDesc in emojiList) {
+        legendaText += `${emojiList[emojiDesc]}  ${emojiDesc}\n`
+    }
+    let minioneText = "_ _\n<a:polarbearPensive:879863553396461678> **MINIONE** <a:polarbearPensive:879863553396461678>"
+    let minioneBackup = minioneText;
+    let nadchodzaceText = "_ _\n<a:catjamturbo:945796454021222441> **NADCHODZĄCE** <a:catjamturbo:945796454021222441>"
+    let lastMonth = ""; 
+    for (const event of discord_events) {
+        if (!event.minal) continue;
+        if (event.miesiac != lastMonth) {
+            lastMonth = event.miesiac;
+            minioneText = minioneText.trimEnd();
+            minioneText += `\n\n🔸 *** ${lastMonth.toUpperCase()} *** 🔸\n`;
+        };
+        minioneText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
+        minioneText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
+    }
+    if (minioneBackup == minioneText) {
+        minioneText += "\n\n🔸 *** SOON:tm: *** 🔸\n"
+    }
+    lastMonth = "";
+    for (const event of discord_events) {
+        if (event.minal) continue;
+        if (event.miesiac != lastMonth) {
+            lastMonth = event.miesiac;
+            nadchodzaceText = nadchodzaceText.trimEnd();
+            nadchodzaceText += `\n\n🔸 *** ${lastMonth.toUpperCase()} *** 🔸\n`;
+        };
+        nadchodzaceText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
+        nadchodzaceText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
+    }
+    await legenda.edit(legendaText);
+    await minione.edit(minioneText);
+    await nadchodzace.edit(nadchodzaceText);
     bot.destroy();
 });
 
