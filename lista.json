@@ -1,142 +1,256 @@
 {
   "konwenty": [
     {
-      "typ": "weebowe",
-      "nazwa": "Aishiteru xD",
+      "typ": "nie jedźcie tam proszę",
+      "nazwa": "Aishiteru",
+      "minal": true,
       "data": "12-13.02.2022",
       "miasto": "Wrocław"
     },
     {
       "typ": "weebowe",
       "nazwa": "Remcon",
+      "minal": true,
       "data": "25-27.02.2022",
       "miasto": "Trójmiasto"
     },
     {
+      "typ": "weebowe",
+      "nazwa": "Technikon",
+      "minal": true,
+      "data": "21-22.05.2022",
+      "miasto": "Szczecin"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Magnificon",
+      "minal": true,
+      "data": "27-29.05.2022",
+      "miasto": "Kraków"
+    },
+    {
       "typ": "fantastowe",
       "nazwa": "Pyrkon",
+      "minal": true,
       "data": "17-19.06.2022",
       "miasto": "Poznań"
     },
     {
       "typ": "weebowe",
       "nazwa": "Minicon-chan",
+      "minal": true,
       "data": "16.07.2022",
       "miasto": "Trójmiasto"
     },
     {
       "typ": "weebowe",
       "nazwa": "Animatsuri",
+      "minal": true,
       "data": "22-24.07.2022",
       "miasto": "Warszawa"
     },
     {
-      "typ": "kij wie, czym to jest xD",
+      "typ": "mieszane/inne",
       "nazwa": "Ryucon",
+      "minal": true,
       "data": "30-31.07.2022",
       "miasto": "Kraków"
     },
     {
       "typ": "weebowe",
       "nazwa": "Hikari",
+      "minal": true,
       "data": "19-21.08.2022",
       "miasto": "Poznań"
     },
     {
-      "typ": "kij wie, czym to jest xD",
-      "nazwa": "Owocon is dead",
-      "data": "XDDDDD.08.2022",
-      "miasto": "XDDDDD"
+      "typ": "mieszane/inne",
+      "nazwa": "Owocon (is dead XD)",
+      "minal": true,
+      "data": "19-20.08.2022",
+      "miasto": "XD"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Funcon",
+      "minal": true,
       "data": "26-28.08.2022",
       "miasto": "Jaworze"
     },
     {
       "typ": "weebowe",
       "nazwa": "KISEKIcon",
+      "minal": true,
       "data": "29.08.2022",
       "miasto": "Wrocław"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Mroźna Brama",
+      "minal": true,
       "data": "03-04.09.2022",
       "miasto": "Suwałki"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Copernicon",
+      "minal": true,
       "data": "16-18.09.2022",
       "miasto": "Toruń"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Opolcon",
+      "minal": true,
       "data": "16-18.09.2022",
       "miasto": "Opole"
     },
     {
       "typ": "weebowe",
       "nazwa": "Moricon",
+      "minal": true,
       "data": "23-25.09.2022",
       "miasto": "Białystok"
     },
     {
       "typ": "weebowe",
-      "nazwa": "Namicon 2022",
+      "nazwa": "Namicon",
+      "minal": true,
       "data": "23-25.09.2022",
       "miasto": "Wrocław"
     },
     {
       "typ": "gej(ming)",
       "nazwa": "Poznań Game Arena",
+      "minal": true,
       "data": "07-09.10.2022",
       "miasto": "Poznań"
     },
     {
       "typ": "weebowe",
       "nazwa": "Japan Fest",
+      "minal": true,
       "data": "08.10.2022",
       "miasto": "Szczecin"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Pasja Minicon",
-      "data": "4-5.11.2022",
+      "minal": true,
+      "data": "04-05.11.2022",
       "miasto": "Trójmiasto"
     },
     {
       "typ": "fantastowe",
       "nazwa": "Imladris w randze Polconu",
+      "minal": true,
       "data": "11-13.11.2022",
       "miasto": "Kraków"
     },
     {
       "typ": "weebowe",
       "nazwa": "Animecon Halloween but Halloween is silent",
+      "minal": true,
       "data": "11-13.11.2022",
       "miasto": "Poznań"
     },
     {
       "typ": "weebowe",
       "nazwa": "Tsuru",
+      "minal": true,
       "data": "19-20.11.2022",
       "miasto": "Rybnik"
     },
     {
       "typ": "weebowe",
       "nazwa": "Magnificon 2.0 You can (not) śmieszkowanie",
-      "data": "3-4.12.2022",
+      "minal": true,
+      "data": "03-04.12.2022",
       "miasto": "Kraków"
     },
     {
       "typ": "weebowe",
       "nazwa": "Xmascon",
+      "minal": true,
       "data": "10-11.12.2022",
       "miasto": "Kraków"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Yukicon",
+      "minal": false,
+      "data": "21-22.01.2023",
+      "miasto": "Opole"
+    },
+    {
+      "typ": "nie jedźcie tam proszę",
+      "nazwa": "Aishiteru",
+      "minal": false,
+      "data": "11.02.2023",
+      "miasto": "Wroclaw"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Remcon",
+      "minal": false,
+      "data": "24-26.02.2023",
+      "miasto": "Trójmiasto"
+    },
+    {
+      "typ": "mieszane/inne",
+      "nazwa": "Kongres",
+      "minal": false,
+      "data": "22-23.04.2023",
+      "miasto": "Skierniewice"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Magnificon:natsu",
+      "minal": false,
+      "data": "19-21.05.2023",
+      "miasto": "Kraków"
+    },
+    {
+      "typ": "mieszane/inne",
+      "nazwa": "Pyrkon",
+      "minal": false,
+      "data": "16-18.06.2023",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Ryucon",
+      "minal": false,
+      "data": "14-16.07.2023",
+      "miasto": "Kraków"
+    },
+    {
+      "typ": "weebowe",
+      "nazwa": "Animatsuri",
+      "minal": false,
+      "data": "28-30.07.2023",
+      "miasto": "Warszawa"
+    },
+    {
+      "typ": "fantastowe",
+      "nazwa": "SkierCon",
+      "minal": false,
+      "data": "28-30.07.2023",
+      "miasto": "Skierniewice"
+    },
+    {
+      "typ": "gej(ming)",
+      "nazwa": "Poznań Game Arena",
+      "minal": false,
+      "data": "06-08.10.2023",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "fantastowe",
+      "nazwa": "Międzynarodowy Festiwal Komiksu i Gier",
+      "minal": false,
+      "data": "07-08.10.2023",
+      "miasto": "Łódź"
     }
   ]
 }
