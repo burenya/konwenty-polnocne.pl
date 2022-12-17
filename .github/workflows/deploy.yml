@@ -2,7 +2,11 @@ name: Deploy
 on:
   push:
     branches:
-      - frontend
+      - main
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -25,8 +29,13 @@ jobs:
       - name: Build discord
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          GOOGLE_ACCOUNT: ${{ secrets.GOOGLE_ACCOUNT }}
+          GOOGLE_PRIVKEY: ${{ secrets.GOOGLE_PRIVKEY }}
+          ACTIVE_YEAR: ${{ secrets.ACTIVE_YEAR }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-          MESSAGE_ID: ${{ secrets.MESSAGE_ID }}
+          LEGENDA_ID: ${{ secrets.LEGENDA_ID }}
+          MINIONE_ID: ${{ secrets.MINIONE_ID }}
+          NADCHODZACE_ID: ${{ secrets.NADCHODZACE_ID }}
         run: |
           cd discord
           npm install
