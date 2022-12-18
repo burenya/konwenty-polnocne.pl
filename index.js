@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { GatewayIntentBits, Client } = require('discord.js');
+const { GatewayIntentBits, Client, AttachmentBuilder } = require('discord.js');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const doc = new GoogleSpreadsheet('1IXNhplTNpHatopR1btypjFycmZt5-cUMiEF0ezspPKI');
@@ -103,38 +103,41 @@ bot.on('ready', async () => {
     const legenda = await channel.messages.fetch(process.env.LEGENDA_ID);
     const minione = await channel.messages.fetch(process.env.MINIONE_ID);
     const nadchodzace = await channel.messages.fetch(process.env.NADCHODZACE_ID);
-    let legendaText = `**KONWENTY I EVENTY W ${activeYear} **\n`;
-    legendaText += "🔸  **LEGENDA** 🔸\n";
+    let legendaText = "";
     for (const emojiDesc in emojiList) {
         legendaText += `${emojiList[emojiDesc]}  ${emojiDesc}\n`
     }
-    let minioneText = "_ _\n<a:polarbearPensive:879863553396461678> **MINIONE** <a:polarbearPensive:879863553396461678>"
+    let minioneText = ""
     let minioneBackup = minioneText;
-    let nadchodzaceText = "_ _\n<a:catjamturbo:945796454021222441> **NADCHODZĄCE** <a:catjamturbo:945796454021222441>"
+    let nadchodzaceText = "";
+    let nadchodzaceBackup = nadchodzaceText;
     let lastMonth = ""; 
     for (const event of discord_events) {
         if (!event.minal) continue;
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
-            minioneText = minioneText.trimEnd();
+            minioneText = minioneText.trim();
             minioneText += `\n\n${lastMonth}\n\n`;
         };
-        minioneText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
-        minioneText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
+        minioneText += `${event.typ}  **${event.dzien} ◆ ${event.nazwa} ◆** ${event.miasto}`;
+        minioneText += event.kanal ? `\n         ↳ Kanał na forum: <#${event.kanal}>\n\n`: '\n\n';
     }
     if (minioneBackup == minioneText) {
-        minioneText += "\n\n🔸 *** SOON:tm: *** 🔸\n"
+        minioneText += "\n\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _:white_circle: ** SOON:tm: ** :white_circle:\n"
     }
     lastMonth = "";
     for (const event of discord_events) {
         if (event.minal) continue;
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
-            nadchodzaceText = nadchodzaceText.trimEnd();
+            nadchodzaceText = nadchodzaceText.trim();
             nadchodzaceText += `\n\n${lastMonth}\n\n`;
         };
-        nadchodzaceText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
-        nadchodzaceText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
+        nadchodzaceText += `${event.typ}  **${event.dzien} ◆ ${event.nazwa} ◆** ${event.miasto}`;
+        nadchodzaceText += event.kanal ? `\n         ↳ Kanał na forum: <#${event.kanal}>\n\n`: '\n\n';
+    }
+    if (nadchodzaceBackup == nadchodzaceText) {
+        nadchodzaceText += `\n\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _:white_circle: ** BRAK <a:polarbearPensive:879863553396461678> ** :white_circle:\n`
     }
     await legenda.edit(legendaText);
     await minione.edit(minioneText);
