@@ -197,6 +197,13 @@
       "miasto": "Trójmiasto"
     },
     {
+      "typ": "weebowe",
+      "nazwa": "Aicon",
+      "minal": false,
+      "data": "??.03.2023",
+      "miasto": "Rybnik"
+    },
+    {
       "typ": "mieszane/inne",
       "nazwa": "Kongres",
       "minal": false,
