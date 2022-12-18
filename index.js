@@ -9,6 +9,8 @@ const bot = new Client({
     presence: {status: 'invisible'}
 });
 
+console.log(process.env.GOOGLE_PRIVKEY);
+
 const ifPastEvent = (a) => {
     const aDate = new Date(a);
     aDate.setHours(0,0,0,0);
@@ -23,6 +25,16 @@ const getMonthList = async () => {
     const rows = await sheet.getRows();
     for (const row of rows) {
         list[row.nazwa_miesiaca] = row.liczba
+    }
+    return list;
+}
+
+const getFormattedMonthList = async () => {
+    const list = {};
+    const sheet = doc.sheetsByTitle["miesiace"];
+    const rows = await sheet.getRows();
+    for (const row of rows) {
+        list[row.nazwa_miesiaca] = row.nazwa_formatowana
     }
     return list;
 }
@@ -47,6 +59,7 @@ bot.on('ready', async () => {
     });
     await doc.loadInfo();
     const monthList = await getMonthList();
+    const formattedMonthList = await getFormattedMonthList();
     const emojiList = await getEmojiList();
     const activeYear = process.env.ACTIVE_YEAR;
     for (const sheetTitle in doc.sheetsByTitle) {
@@ -78,7 +91,7 @@ bot.on('ready', async () => {
                 "nazwa": row.nazwa_konwentu,
                 "minal": ifPastEvent(`${year}-${month}-${end_date}`),
                 "dzien": `${day}`,
-                "miesiac": row.miesiac,
+                "miesiac": formattedMonthList[row.miesiac],
                 "miasto": row.miasto,
                 "kanal": row.id_kanalu
             })
@@ -106,7 +119,7 @@ bot.on('ready', async () => {
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
             minioneText = minioneText.trimEnd();
-            minioneText += `\n\n🔸 *** ${lastMonth.toUpperCase()} *** 🔸\n`;
+            minioneText += `\n\n${lastMonth}\n`;
         };
         minioneText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
         minioneText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
@@ -120,7 +133,7 @@ bot.on('ready', async () => {
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
             nadchodzaceText = nadchodzaceText.trimEnd();
-            nadchodzaceText += `\n\n🔸 *** ${lastMonth.toUpperCase()} *** 🔸\n`;
+            minioneText += `\n\n${lastMonth}\n`;
         };
         nadchodzaceText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
         nadchodzaceText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
