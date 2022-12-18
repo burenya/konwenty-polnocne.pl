@@ -9,8 +9,6 @@ const bot = new Client({
     presence: {status: 'invisible'}
 });
 
-console.log(process.env.GOOGLE_PRIVKEY);
-
 const ifPastEvent = (a) => {
     const aDate = new Date(a);
     aDate.setHours(0,0,0,0);
@@ -119,7 +117,7 @@ bot.on('ready', async () => {
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
             minioneText = minioneText.trimEnd();
-            minioneText += `\n\n${lastMonth}\n`;
+            minioneText += `\n\n${lastMonth}\n\n`;
         };
         minioneText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
         minioneText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
@@ -133,7 +131,7 @@ bot.on('ready', async () => {
         if (event.miesiac != lastMonth) {
             lastMonth = event.miesiac;
             nadchodzaceText = nadchodzaceText.trimEnd();
-            minioneText += `\n\n${lastMonth}\n`;
+            nadchodzaceText += `\n\n${lastMonth}\n\n`;
         };
         nadchodzaceText += `${event.typ} **${event.dzien} 🔸 ${event.nazwa} 🔸** ${event.miasto}`;
         nadchodzaceText += event.kanal ? `\n👉 **Kanał na forum:** <#${event.kanal}>\n\n`: '\n\n';
