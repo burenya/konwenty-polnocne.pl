@@ -177,6 +177,13 @@
     },
     {
       "typ": "weebowe",
+      "nazwa": "Testcon",
+      "minal": false,
+      "data": "01-02.01.2023",
+      "miasto": "Poznań"
+    },
+    {
+      "typ": "weebowe",
       "nazwa": "Yukicon",
       "minal": false,
       "data": "21-22.01.2023",
