@@ -1,35 +1,42 @@
 {
   "konwenty": [
     {
-      "nazwa": "test",
+      "nazwa": "WROCŁAWSKI WEEKEND Z MAJONGIEM",
+      "miasto": "Wrocław",
+      "data": "20.10.2022",
+      "link": "TEST",
+      "typ": "TEST"
+    },
+    {
+      "nazwa": "AISHITERU",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
       "typ": "TEST"
     },
     {
-      "nazwa": "Testtesttest",
+      "nazwa": "PYRKON",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
       "typ": "TEST"
     },
     {
-      "nazwa": "Testtesttest",
+      "nazwa": "PGARENA",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
       "typ": "TEST"
     },
     {
-      "nazwa": "Testtesttest",
+      "nazwa": "WARSZAWSKIE DNI FANTASTYKI",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
       "typ": "TEST"
     },
     {
-      "nazwa": "Testtesttest",
+      "nazwa": "POZNAŃSKI FESTIWAL ANIME I MANGI",
       "miasto": "TEST",
       "data": "20.10.2022",
       "link": "TEST",
