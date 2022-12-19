@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Satoshi";
   src: url(../font/Satoshi-Variable.ttf);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @font-face {
@@ -15,6 +15,7 @@
   padding: 0;
   font-family: Satoshi;
 }
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
@@ -27,10 +28,49 @@ body::-webkit-scrollbar {
 }
 
 header {
+  top: 0%;
   position: fixed;
   z-index: 1000;
   margin: 1rem 0 0 10%;
   display: flex;
+<<<<<<< HEAD
+=======
+  user-select: none;
+}
+nav {
+  width: 80%;
+  margin: 5rem 0 2.5rem 10%;
+  div {
+    margin: 0.5rem 0 0.5rem;
+  }
+  .bubble {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    transition-duration: 400ms;
+  }
+  .bubble:hover {
+    border-radius: 15px;
+    transition-duration: 400ms;
+  }
+  .checkbox {
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    input + .bubble {
+      transition-duration: 400ms;
+    }
+    input:checked + .bubble {
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+    }
+  }
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
 }
 .bubble {
   outline: none;
@@ -39,6 +79,7 @@ header {
   margin: 0 1rem 0 0;
   padding: 0.25rem 1rem 0 1rem;
   display: flex;
+  margin-right: 0.5rem;
   flex-direction: row;
   align-items: center;
   border-radius: 61px;
@@ -48,19 +89,33 @@ header {
     height: 1rem;
     width: auto;
   }
+  input {
+    outline: none;
+    border: none;
+  }
 }
 section {
+  z-index: -1000;
   width: 80%;
   display: grid;
   margin-left: 10%;
+<<<<<<< HEAD
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
+=======
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
 }
 div.konwent {
-  z-index: -2;
-  background-color: #3accc3;
+  z-index: 900;
+  width: 100%;
+  height: 28rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   height: 25rem;
   overflow: hidden;
   position: relative;
@@ -84,11 +139,75 @@ div.konwent {
     .bottom {
       align-self: center;
       justify-self: flex-end;
+=======
+  align-items: center;
+  position: relative;
+  .img {
+    position: absolute;
+    width: 100%;
+  }
+  .hoverable {
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+    h1 {
+      text-align: center;
+      word-break: normal;
+      font-size: 4vw;
+      line-height: 4rem;
+    }
+  }
+  .menu {
+    margin: 5rem;
+    opacity: 0;
+    position: absolute;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.25rem;
+      border-radius: 50px;
+    }
+    .link {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .calendar {
+      grid-column: 1/3;
+      grid-row: 2;
+    }
+    .plan {
+    }
+    .bottom {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+  .div_footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1100;
+    .bottom {
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
       width: 95%;
       font-size: 23px;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+<<<<<<< HEAD
       flex-direction: row;
       .data_bottom {
         justify-self: flex-end;
@@ -103,31 +222,82 @@ div.konwent {
     }
     .info {
       justify-self: flex-end;
+=======
+      div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        hr {
+          border: 0;
+          height: 3px;
+          min-width: 5rem;
+          flex: 1;
+          background-color: black;
+        }
+        p {
+          white-space: nowrap;
+        }
+      }
+    }
+    .info {
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
       display: flex;
       justify-content: space-around;
       width: 100%;
       div {
         display: flex;
         justify-content: center;
+<<<<<<< HEAD
+=======
+        align-items: center;
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
         border: 3px solid black;
         border-radius: 11px;
         margin: 0.5rem;
         flex: 1;
       }
+<<<<<<< HEAD
+=======
+      .icon {
+        margin: 0 0.5rem 0 0;
+        height: 1.5rem;
+      }
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
     }
   }
   .blob {
-    align-self: flex-start;
-    color: #f2f552;
-    z-index: -1;
     position: absolute;
+<<<<<<< HEAD
     height: 100%;
     margin: 15% 0 0 -15%;
+=======
+    z-index: -1;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    transition-duration: 250ms;
+  }
+  .hoverable:hover {
+    h1 {
+      opacity: 0;
+    }
+    ~ .blob {
+      opacity: 0;
+    }
+    ~ .menu {
+      opacity: 1;
+    }
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
   }
 }
+
 footer {
+<<<<<<< HEAD
   width: 90%;
   margin: 10rem 0 15rem 10%;
+=======
+  margin: 2rem 0 15rem 10%;
+>>>>>>> dc412369a0e387237b6ada4f47db0eac58aa7c07
   display: flex;
   flex-direction: column;
   .Links {
@@ -135,5 +305,12 @@ footer {
     div {
       margin: 0.5rem 1rem 0 0;
     }
+  }
+  .bubble {
+    cursor: pointer;
+    user-select: none;
+  }
+  .bubble:hover {
+    border-radius: 15px;
   }
 }
